@@ -34,7 +34,7 @@ export class Bundler {
     this.code = await this.compile(this.file)
 
     if (this.opts.hotReload) {
-      this.code = this.code += await this.compile(import.meta.resolve('./hotreload.ts'))
+      this.code = this.code += await this.compile(import.meta.resolve('./hotReload.ts'))
     }
 
     console.log('bundled')
