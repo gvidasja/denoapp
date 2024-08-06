@@ -1,4 +1,4 @@
-import * as path from 'https://deno.land/std@0.196.0/path/mod.ts'
+import * as path from 'jsr:@std/path'
 import { WebSocketServer } from 'https://deno.land/x/websocket@v0.1.4/mod.ts'
 
 interface BundlerOptions {
