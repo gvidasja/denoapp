@@ -1,5 +1,5 @@
-import * as path from 'jsr:@std/path'
 import { WebSocketServer } from 'https://deno.land/x/websocket@v0.1.4/mod.ts'
+import * as path from 'jsr:@std/path'
 
 interface BundlerOptions {
   watch: boolean
@@ -41,7 +41,7 @@ export class Bundler {
   }
 
   private async compile(file: string): Promise<string> {
-    const denoPath = Deno.env.get('DENO_PATH') || 'deno'
+    const denoPath = Deno.env.get('DENO_PATH') || '~/.deno/bin/deno'
 
     const cmd = new Deno.Command(denoPath, { args: ['bundle', file] })
 

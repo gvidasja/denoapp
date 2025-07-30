@@ -10,7 +10,7 @@ deno run --allow-read https://deno.land/x/denoapp/0.0.1/init.ts
 * use UI middleware
 
 ```ts
-import 'https://deno.land/std@0.196.0/dotenv/load.ts'
+import 'jsr:@std/dotenv/load.ts'
 import { Application } from 'https://deno.land/x/oak@v12.6.0/mod.ts'
 import { uiMiddleware } from 'https://deno.land/x/denoapp/0.0.1/mod.ts'
 
