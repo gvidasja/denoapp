@@ -1,5 +1,5 @@
-import { WebSocketServer } from 'https://deno.land/x/websocket@v0.1.4/mod.ts'
-import * as path from 'jsr:@std/path'
+import * as path from 'jsr:@std/path@1'
+import { WebSocketServer } from './ws.ts'
 
 interface BundlerOptions {
   watch: boolean
@@ -65,9 +65,7 @@ export class Bundler {
 
       if (this.opts.hotReload) {
         console.log('reloading')
-        this.ws?.clients.forEach(client => {
-          client.send('reload')
-        })
+        this.ws?.broadcast('reload')
       }
     }
   }

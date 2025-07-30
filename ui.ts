@@ -1,4 +1,4 @@
-import { Router, RouterOptions } from 'jsr:@oak/oak'
+import { Router, type RouterOptions } from 'jsr:@oak/oak@17'
 import { Bundler } from './bundler.ts'
 
 const development = Deno.env.get('MODE') === 'development'

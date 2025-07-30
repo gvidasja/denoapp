@@ -1,15 +1,9 @@
-import {
-  StandardWebSocketClient,
-  WebSocketClient,
-} from 'https://deno.land/x/websocket@v0.1.4/mod.ts'
-
-let ws: WebSocketClient
+let ws: WebSocket
 
 setInterval(() => {
-  ws?.ping()
-  if (!ws || ws.isClosed) {
-    ws = new StandardWebSocketClient('ws://localhost:3001')
-    ws.on('message', function (message: { data: string }) {
+  if (!ws || ws.readyState === WebSocket.CLOSED) {
+    ws = new WebSocket('ws://localhost:3001')
+    ws.addEventListener('message', function (message: { data: string }) {
       message.data === 'reload' && window.location.reload()
     })
   }

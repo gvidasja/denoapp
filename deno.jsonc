@@ -1,4 +1,8 @@
 {
+  "name": "@gvidasja/denoapp",
+  "version": "0.0.4",
+  "exports": "./mod.ts",
+  "license": "MIT",
   "tasks": {
     "dev": "deno run -A --watch src/mod.ts"
   },
@@ -10,9 +14,6 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "https://esm.sh/react@18.2.0",
-    "lib": [
-      "deno.window",
-      "dom"
-    ]
+    "lib": ["deno.window", "dom"]
   }
 }
