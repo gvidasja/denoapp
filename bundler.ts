@@ -41,9 +41,7 @@ export class Bundler {
   }
 
   private async compile(file: string): Promise<string> {
-    const denoPath = Deno.env.get('DENO_PATH') || '~/.deno/bin/deno'
-
-    const cmd = new Deno.Command(denoPath, { args: ['bundle', file] })
+    const cmd = new Deno.Command(Deno.execPath(), { args: ['bundle', file] })
 
     const output = await cmd.output()
 
