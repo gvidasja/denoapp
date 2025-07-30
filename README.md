@@ -4,15 +4,15 @@ To add a UI controller with bundler:
 
 * init deno.jsonc
 ```bash
-deno run --allow-read https://deno.land/x/denoapp/0.0.1/init.ts
+deno run --allow-read @jsr:@gvidasja/denoapp/init
 ```
 
 * use UI middleware
 
 ```ts
 import 'jsr:@std/dotenv/load.ts'
-import { Application } from 'https://deno.land/x/oak@v12.6.0/mod.ts'
-import { uiMiddleware } from 'https://deno.land/x/denoapp/0.0.1/mod.ts'
+import { Application } from 'jsr:@oak/oak'
+import { uiMiddleware } from 'jsr:@gvidasja/denoapp'
 
 const app = new Application()
   .use(
