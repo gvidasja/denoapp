@@ -31,6 +31,7 @@ export class UIController {
       })
       .get('/index.js', ctx => {
         ctx.response.body = this.bundler.getCode()
+        ctx.response.headers.set('Content-Type', 'text/javascript')
         ctx.response.status = 200
       })
       .routes()
